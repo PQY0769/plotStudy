@@ -1,0 +1,16 @@
+import numpy as np
+import matplotlib.pyplot as plt
+plt.rcParams['font.sans-serif']=['SimHei'] # 用来正常显示中文标签
+plt.text(-4, 0.6, '黄紫旋',fontsize=20)
+plt.text(0.6, 0.6, '彭秋阳',fontsize=20)
+x=[]
+y1=[]
+y2=[]
+for i in range(100):
+    xa=-8+i*0.16
+    x.append(xa)
+    y1.append(0.618*np.abs(xa) - 0.8* np.sqrt(64-xa**2))
+    y2.append(0.618*np.abs(xa) + 0.8* np.sqrt(64-xa**2))  
+    plt.plot(x, y1, color = 'r')
+    plt.plot(x, y2, color = 'r')
+    plt.pause(0.1)
